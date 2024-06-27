@@ -47,7 +47,7 @@ body {
 }
 
 .container {
-  @include media.xs-to-sm {
+  @include media.sm-down {
     margin-inline: 15px;
   }
 

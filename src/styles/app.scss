@@ -3,12 +3,12 @@
 
 :root {
   //fonts
-  --f-sofia: "Sofia Sans Semi Condensed", sans-serif;
-  --f-fira-sans: "Fira Sans", sans-serif;
+  --f-montserrat: "Montserrat", sans-serif;
+  --f-noto: "Noto Serif", serif;
   --f-trajan-pro: "Trajan Pro", sans-serif;
 
-  --f-base: var(--f-sofia);
-  --f-headings: var(--f-montserrat);
+  --f-base: var(--f-montserrat);
+  --f-headings: var(--f-noto);
   --f-icons:var(--f-trajan-pro);
 
   //colors
