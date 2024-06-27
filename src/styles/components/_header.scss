@@ -6,31 +6,146 @@
 }
 
 .header__nav-bar {
+  z-index: var(--z-middle);
   padding-block: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header__logo {
-  height: 80px;
+  height: 50px;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
+  @include media.md-up {
+    height: 80px;
+  }
 }
 
 .header__nav {
-  display: flex;
-  align-items: center;
+  @include media.sm-down {
+    overflow: hidden;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    border-radius: 0 0 30px 30px;
+    z-index: var(--z-bottom);
+    position: absolute;
+    top: -300%;
+    left: 0;
+    width: 100%;
+    background-color: var(--c-header);
+    transition: top 0.3s ease;
 
-  ul {
-    display: flex;
-    gap: 20px;
-
-    a {
-      color: var(--c-blue-100);
+    &.nav-active {
+      top: 100%;
     }
+
+    img {
+      position: absolute;
+      width: 284px;
+      right: -125px;
+      top: 0;
+    }
+
+    ul {
+      margin-inline: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-size: functions.rem(20);
+
+      li {
+        a {
+          display: flex;
+          flex-direction: column;
+          color: var(--c-blue-100);
+
+          &:after {
+            content: '';
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(90deg, #234869 0%, rgba(154, 194, 223, 0.15) 100%);
+          }
+        }
+      }
+    }
+  }
+
+  @include media.md-up {
+    display: flex;
+    align-items: center;
+
+    img {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      gap: 20px;
+
+      a {
+        color: var(--c-blue-100);
+      }
+    }
+  }
+}
+
+.header__burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  background-color: transparent;
+
+  &.burger-active .header__burger-btn {
+    background-color: transparent;
+
+    &::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+  }
+
+  .header__burger-btn {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 30px;
+    height: 2px;
+    background-color: var(--c-blue-100);
+    transition: background-color 0.3s ease;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background-color: var(--c-blue-100);
+      transition: top 0.3s ease, bottom 0.3s ease, transform 0.3s ease;
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      bottom: -8px;
+    }
+  }
+
+  @include media.md-up {
+    display: none;
   }
 }

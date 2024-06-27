@@ -3,14 +3,31 @@
         <a href="/" class="header__logo">
             <img src="/logo.svg" alt="logo" />
         </a>
-        <nav class="header__nav">
+        <nav class="header__nav" id="nav-menu">
             <ul>
                 <li><a href="#">Обо мне</a></li>
                 <li><a href="#">Творчество</a></li>
                 <li><a href="#">Афиша</a></li>
                 <li><a href="#">Контакты</a></li>
             </ul>
+            <img src="/logo-image.webp" alt="logo-image">
         </nav>
-
+        <button class="header__burger" id="burger-button">
+            <span class="header__burger-btn"></span>
+        </button>
     </div>
 </header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const burgerButton: HTMLElement | null = document.getElementById('burger-button');
+        const navMenu: HTMLElement | null = document.getElementById('nav-menu');
+
+        if (burgerButton && navMenu) {
+            burgerButton.addEventListener('click', function () {
+                this.classList.toggle('burger-active');
+                navMenu.classList.toggle('nav-active');
+            });
+        }
+    });
+</script>
