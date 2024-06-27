@@ -1,0 +1,166 @@
+@use "../helpers/media";
+
+* {
+  //outline: 1px solid #f00 !important;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding: 86px;
+
+  @include media.lg-up {
+    scroll-padding: 90px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+:focus {
+  outline: none;
+}
+
+body {
+  min-width: 320px;
+  position: relative;
+  background-color: var(--c-blue-100);
+  font-family: var(--f-base);
+  color: var(--c-primary);
+}
+
+.section {
+  padding-bottom: 60px;
+
+  @include media.lg-up {
+    padding-bottom: 120px;
+  }
+
+  &--overflow-hidden {
+    overflow: hidden;
+  }
+}
+
+.container {
+  @include media.xs-to-sm {
+    margin-inline: 15px;
+  }
+
+  @include media.md-up {
+    margin-inline: 30px;
+  }
+
+  @include media.lg-up {
+    margin-inline: 60px;
+  }
+
+  @include media.xl-up {
+    margin-inline: auto;
+    max-width: 1220px;
+  }
+}
+
+.xs-container {
+  margin-inline: unset;
+
+  @include media.xl-up {
+    margin-inline: auto;
+    max-width: 1220px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, p, li {
+  margin: 0;
+  padding: 0;
+}
