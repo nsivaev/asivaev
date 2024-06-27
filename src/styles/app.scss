@@ -1,0 +1,49 @@
+@use "sections";
+@use "components";
+
+:root {
+  //fonts
+  --f-sofia: "Sofia Sans Semi Condensed", sans-serif;
+  --f-fira-sans: "Fira Sans", sans-serif;
+  --f-trajan-pro: "Trajan Pro", sans-serif;
+
+  --f-base: var(--f-sofia);
+  --f-headings: var(--f-montserrat);
+  --f-icons:var(--f-trajan-pro);
+
+  //colors
+  --c-header:#E7EFF7;
+  --c-primary: #63A1CD;
+  --c-button:#E7EFF7;
+
+  --c-white: #fff;
+  --c-blue-0: #F3F7FC;
+  --c-blue-10: #E7EFF7;
+  --c-blue-20: #C9DDEE;
+  --c-blue-30: #9AC2DF;
+  --c-blue-40: #63A1CD;
+  --c-blue-50: #3A7AA8;
+  --c-blue-60: #2E6A9B;
+  --c-blue-70: #27567D;
+  --c-blue-80: #234869;
+  --c-blue-90: #223E58;
+  --c-blue-100: #17283A;
+  --c-black: #000000;
+
+  --c-bg-dark: #010101;
+
+  //border-radius
+  --b-radius-xs: 4px;
+  --b-radius-xsm: 8px;
+  --b-radius-sm: 10px;
+  --b-radius: 20px;
+
+  --b-radius-bhero: 30px;
+
+  //z-indexes
+  --z-bottom: -2;
+  --z-middle-bottom: -1;
+  --z-middle: 0;
+  --z-middle-top: 1;
+  --z-top: 2;
+}
